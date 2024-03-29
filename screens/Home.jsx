@@ -2,7 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./home.style";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, Fontisto } from "@expo/vector-icons";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { Carousel, Welcome } from "../components";
 
 const Home = () => {
   return (
@@ -15,9 +17,16 @@ const Home = () => {
             <View style={styles.cartCount}>
               <Text style={styles.cardNumber}>8</Text>
             </View>
+            <TouchableOpacity>
+              <Fontisto name="shopping-bag" size={24} />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
+      <ScrollView>
+        <Welcome />
+        <Carousel />
+      </ScrollView>
     </SafeAreaView>
   );
 };
