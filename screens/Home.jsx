@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./home.style";
 import { Ionicons, Fontisto } from "@expo/vector-icons";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import { Carousel, Welcome } from "../components";
+import { Carousel, Headings, ProductRow, Welcome } from "../components";
 
 const Home = () => {
   return (
@@ -26,6 +26,8 @@ const Home = () => {
       <ScrollView>
         <Welcome />
         <Carousel />
+        <Headings />
+        <ProductRow />
       </ScrollView>
     </SafeAreaView>
   );
