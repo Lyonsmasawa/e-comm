@@ -1,8 +1,7 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./headings.style";
 import { COLORS, SIZES } from "../../constants/theme";
-import {TouchableOpacity } from "react-native-gesture-handler";
 import {  Ionicons } from "@expo/vector-icons";
 
 const Headings = () => {

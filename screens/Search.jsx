@@ -1,8 +1,7 @@
-import { Text, View } from "react-native";
+import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./search.styles";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, SIZES } from "../constants/theme";
 import { Feather, Ionicons } from "@expo/vector-icons";
 
