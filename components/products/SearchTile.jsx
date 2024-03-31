@@ -13,12 +13,14 @@ import { Ionicons } from "@expo/vector-icons";
 import ProductCartView from "./ProductCartView";
 import useFetch from "../../hook/useFetch";
 
-const SearchTile = () => {
+const SearchTile = ({ item }) => {
+  const itemData = item?.item;
+  console.log(itemData);
   return (
     <View>
       <TouchableOpacity style={styles.container}>
         <View style={styles.image}>
-          <Image />
+          <Image source={{ uri: itemData.imageUrl }} />
         </View>
       </TouchableOpacity>
     </View>

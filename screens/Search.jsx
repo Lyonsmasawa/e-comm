@@ -12,6 +12,7 @@ import styles from "./search.styles";
 import { COLORS, SIZES } from "../constants/theme";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import axios from "axios";
+import { SearchTile } from "../components";
 
 const Search = () => {
   const [searchKey, setSearchKey] = useState("");
@@ -23,7 +24,7 @@ const Search = () => {
       const response = await axios.get(
         `http://10.0.2.2:3000/api/products/search/${searchKey}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setSearchResults(response.data);
     } catch (error) {
       console.log(error.message);
@@ -70,9 +71,7 @@ const Search = () => {
         <FlatList
           data={searchResults}
           keyExtractor={(item) => item._id}
-          renderItem={(item) => (
-            <Text style={{ color: COLORS.black }}>{item.item.price}</Text>
-          )}
+          renderItem={(item) => <SearchTile item={item} />}
         />
       )}
     </SafeAreaView>
