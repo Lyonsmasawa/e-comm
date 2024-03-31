@@ -8,8 +8,12 @@ import {
 } from "@expo/vector-icons";
 import styles from "./productDetails.style";
 import { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 
 const ProductDetails = ({ navigation }) => {
+  const route = useRoute();
+  const item = route.params;
+  // console.log(item);
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -39,9 +43,9 @@ const ProductDetails = ({ navigation }) => {
       />
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$660.88</Text>
+            <Text style={styles.price}>${item.price}</Text>
           </View>
         </View>
         <View style={styles.ratingRow}>
@@ -69,18 +73,13 @@ const ProductDetails = ({ navigation }) => {
         </View>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descText}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, fuga.
-            Ratione nobis, sequi nisi, magni ipsam est nesciunt totam maxime
-            repellat omnis laboriosam tenetur cupiditate, aliquid hic
-            perferendis doloribus voluptatum.
-          </Text>
+          <Text style={styles.descText}>{item.description}</Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
             <View style={{ flexDirection: "row" }}>
               <Ionicons size={20} name="location-outline" />
-              <Text> Dallas </Text>
+              <Text>{item.product_location?.split(' ')[0]}</Text>
             </View>
 
             <View style={{ flexDirection: "row" }}>
