@@ -6,15 +6,29 @@ import {
   MaterialCommunityIcons,
   Fontisto,
 } from "@expo/vector-icons";
-import styles from "./productDetails.style";
+import styles from "./newArrivals.style";
 import { useState } from "react";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ProductList } from "../components";
 
-const NewArrivals = () => {
+const NewArrivals = ({ navigation }) => {
   return (
-    <View>
-      <Text>NewArrivals</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.wrapper}>
+        <View style={styles.upperRow}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons
+              name="chevron-back-circle"
+              size={30}
+              color={COLORS.lightWhite}
+            />
+          </TouchableOpacity>
+          <Text style={styles.heading}>Products</Text>
+        </View>
+        <ProductList />
+      </View>
+    </SafeAreaView>
   );
 };
 
