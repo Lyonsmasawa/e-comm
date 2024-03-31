@@ -12,7 +12,7 @@ import { useRoute } from "@react-navigation/native";
 
 const ProductDetails = ({ navigation }) => {
   const route = useRoute();
-  const item = route.params;
+  const item = route?.params?.item;
   // console.log(item);
   const [count, setCount] = useState(1);
 
@@ -79,7 +79,7 @@ const ProductDetails = ({ navigation }) => {
           <View style={styles.location}>
             <View style={{ flexDirection: "row" }}>
               <Ionicons size={20} name="location-outline" />
-              <Text>{item.product_location?.split(' ')[0]}</Text>
+              <Text>{item.product_location?.split(" ")[0]}</Text>
             </View>
 
             <View style={{ flexDirection: "row" }}>

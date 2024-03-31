@@ -8,9 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 const ProductCartView = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("ProductDetails", { item })}
-    >
+    <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
