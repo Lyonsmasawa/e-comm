@@ -29,7 +29,7 @@ const Home = () => {
       </View>
       <ScrollView>
         <Welcome />
-        <Carousel />
+        {/* <Carousel /> */}
         <Headings />
         <ProductRow />
       </ScrollView>

@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -11,11 +10,10 @@ const useFetch = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.get("localhost:3000/api/products/");
+      const response = await axios("http://10.0.2.2:3000/api/products/");
       setData(response.data);
-      setIsLoading(false);
     } catch (error) {
-      setError(error);
+      setError(error.message); // Set error message instead of the entire error object
     } finally {
       setIsLoading(false);
     }
@@ -23,7 +21,7 @@ const useFetch = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); // Dependency array is empty; effect runs only once on component mount
 
   const refetch = () => {
     setIsLoading(true);
